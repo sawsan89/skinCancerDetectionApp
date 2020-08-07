@@ -1,11 +1,9 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "web": "expo start --web",
-    "eject": "expo eject",
     "server": "nodemon back-end/server.js",
     "test": "jest --watch"
   },
@@ -25,29 +23,16 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "expo": "~38.0.8",
-    "expo-firebase": "0.0.0-alpha.0",
-    "expo-firebase-analytics": "^2.4.1",
-    "expo-firebase-app": "^2.0.0",
-    "expo-firebase-auth": "^2.0.0",
-    "expo-firebase-crashlytics": "^2.0.0",
-    "expo-firebase-database": "^2.0.0",
-    "expo-firebase-firestore": "^2.0.0",
-    "expo-firebase-functions": "^2.0.0",
-    "expo-firebase-instance-id": "^2.0.0",
-    "expo-firebase-invites": "^2.0.0",
-    "expo-firebase-links": "^2.0.0",
-    "expo-firebase-messaging": "^2.0.0",
-    "expo-firebase-notifications": "^2.0.0",
-    "expo-firebase-performance": "^2.0.0",
-    "expo-firebase-remote-config": "^2.0.0",
-    "expo-firebase-storage": "^2.0.0",
     "expo-image-picker": "~8.3.0",
     "expo-mail-composer": "^8.3.0",
     "expo-notifications": "^0.5.0",
     "expo-permissions": "~9.0.1",
     "expo-react-native-adapter": "^3.0.1",
+    "expo-splash-screen": "^0.5.0",
     "expo-status-bar": "^1.0.2",
+    "expo-updates": "~0.2.10",
     "express": "^4.17.1",
+    "firebase": "^7.17.2",
     "galio-framework": "^0.7.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.24",
@@ -56,7 +41,7 @@
     "passport-jwt": "^4.0.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native": "~0.62.2",
     "react-native-animatable": "^1.3.3",
     "react-native-datepicker": "^1.7.2",
     "react-native-firebase": "^5.6.0",
@@ -68,14 +53,17 @@
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-simple-time-picker": "^0.2.0",
+    "react-native-unimodules": "~0.10.1",
     "react-native-web": "~0.11.7",
-    "react-navigation": "^4.4.0",
-    "expo-firebase-core": "~1.1.1"
+    "react-navigation": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0",
+    "babel-jest": "~25.2.6",
     "jest": "^26.2.2",
+    "react-test-renderer": "~16.11.0",
+    "babel-preset-expo": "~8.1.0",
+    "jetifier": "^1.6.6",
     "supertest": "^4.0.2"
   },
   "private": true,
@@ -83,10 +71,12 @@
     "preset": "react-native",
     "testEnvironment": "node"
   },
-    "expo": {
-      "android": {
-        "package": "skd.com.firebase",
-        "googleServicesFile": "./google-services.json"
-      }
+  "expo": {
+    "android": {
+      "package": "skd.com.firebase",
+      "googleServicesFile": "./google-services.json"
     }
+  },
+  "name": "skinCancerDetectionApp",
+  "version": "1.0.0"
 }

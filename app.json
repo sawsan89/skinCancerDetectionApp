@@ -17,13 +17,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "sdk.ios.expo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "android": {
       "package": "skd.com.firebase"
-    }
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }

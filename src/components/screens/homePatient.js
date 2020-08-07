@@ -9,7 +9,7 @@ import { NavigationActions } from "@react-navigation/native";
 
 //import firebase from 'expo-firebase-app'
 //import { firestore } from "react-native-firebase";
-import * as firebase from 'expo-firebase-core';
+import * as firebase from 'firebase';
 var firebaseConfig = {
   apiKey: "AIzaSyB1PLFrXX2dk_qBdVO6LjNuwMQVVT3dCw0",
   authDomain: "skincancerdetectionapp.firebaseapp.com",
