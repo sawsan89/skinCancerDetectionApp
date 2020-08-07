@@ -14,6 +14,7 @@
     "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/datetimepicker": "^2.4.0",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-firebase/app": "^8.3.0",
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/material-top-tabs": "^5.2.14",
     "@react-navigation/native": "^5.7.1",
@@ -24,10 +25,27 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "expo": "~38.0.8",
+    "expo-firebase": "0.0.0-alpha.0",
+    "expo-firebase-analytics": "^2.4.1",
+    "expo-firebase-app": "^2.0.0",
+    "expo-firebase-auth": "^2.0.0",
+    "expo-firebase-crashlytics": "^2.0.0",
+    "expo-firebase-database": "^2.0.0",
+    "expo-firebase-firestore": "^2.0.0",
+    "expo-firebase-functions": "^2.0.0",
+    "expo-firebase-instance-id": "^2.0.0",
+    "expo-firebase-invites": "^2.0.0",
+    "expo-firebase-links": "^2.0.0",
+    "expo-firebase-messaging": "^2.0.0",
+    "expo-firebase-notifications": "^2.0.0",
+    "expo-firebase-performance": "^2.0.0",
+    "expo-firebase-remote-config": "^2.0.0",
+    "expo-firebase-storage": "^2.0.0",
     "expo-image-picker": "~8.3.0",
     "expo-mail-composer": "^8.3.0",
     "expo-notifications": "^0.5.0",
     "expo-permissions": "~9.0.1",
+    "expo-react-native-adapter": "^3.0.1",
     "expo-status-bar": "^1.0.2",
     "express": "^4.17.1",
     "galio-framework": "^0.7.1",
@@ -51,7 +69,8 @@
     "react-native-screens": "~2.9.0",
     "react-native-simple-time-picker": "^0.2.0",
     "react-native-web": "~0.11.7",
-    "react-navigation": "^4.4.0"
+    "react-navigation": "^4.4.0",
+    "expo-firebase-core": "~1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
@@ -63,5 +82,11 @@
   "jest": {
     "preset": "react-native",
     "testEnvironment": "node"
-  }
+  },
+    "expo": {
+      "android": {
+        "package": "skd.com.firebase",
+        "googleServicesFile": "./google-services.json"
+      }
+    }
 }

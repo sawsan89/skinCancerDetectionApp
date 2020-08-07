@@ -6,9 +6,25 @@ import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 import Header from "../common/header";
 import { NavigationActions } from "@react-navigation/native";
+
+//import firebase from 'expo-firebase-app'
+//import { firestore } from "react-native-firebase";
+import * as firebase from 'expo-firebase-core';
+var firebaseConfig = {
+  apiKey: "AIzaSyB1PLFrXX2dk_qBdVO6LjNuwMQVVT3dCw0",
+  authDomain: "skincancerdetectionapp.firebaseapp.com",
+  databaseURL: "https://skincancerdetectionapp.firebaseio.com",
+  projectId: "skincancerdetectionapp",
+  storageBucket: "skincancerdetectionapp.appspot.com",
+  messagingSenderId: "65296723747",
+  appId: "1:65296723747:web:df01476cc58d53f9646696",
+};
+
+firebase.initializeApp(firebaseConfig);
+
 export default class HomePatient extends React.Component {
-  constructor(props){
-    super()
+  constructor(props) {
+    super();
   }
   state = {
     image: null,
@@ -27,7 +43,6 @@ export default class HomePatient extends React.Component {
               allowsEditing: false,
             });
             this.setState({ image: uri });
-            console.log(uri);
           },
           style: "Camera",
         },
@@ -46,6 +61,13 @@ export default class HomePatient extends React.Component {
               return;
             } else {
               this.setState({ image: pickerResult.uri });
+              this.uploadImage(this.state.image, "test-image")
+                .then(() => {
+                  Alert.alert("Success");
+                })
+                .catch((error) => {
+                  Alert.alert(error);
+                });
             }
           },
         },
@@ -58,8 +80,18 @@ export default class HomePatient extends React.Component {
       { cancelable: false }
     );
   };
+
+  uploadImage = async (uri, imageName) => {
+    const response = await fetch(uri);
+    const blob = await response.blob();
+    var ref = firebase
+      .storage()
+      .ref()
+      .child("images/" + imageName);
+    return ref.put(blob);
+  };
+
   render() {
-    
     return (
       <View>
         <Header drawer={this.props} />
@@ -82,7 +114,6 @@ export default class HomePatient extends React.Component {
           size={45}
           color="#18dcff"
           style={styles.predict}
-          
         />
       </View>
     );
